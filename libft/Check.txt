@@ -1,10 +1,10 @@
 1. Revisar SPLIT, reducir y limpiar
 2. Revisar ITOA, comentarios, norma, tamaño,...
-2. Seguir añadiendo el principio de la funcion en LIBFT.H
-3. Añadir #include <libft.h> a todos los archivos
-4. Sigue tocando el github
-5. todo lo que tenga strderr revisar antes de entregar
-5. Sigue mena
+3. Seguir añadiendo el principio de la funcion en LIBFT.H
+4. Añadir #include <libft.h> a todos los archivos
+5. Sigue tocando el github
+6. todo lo que tenga strderr revisar antes de entregar
+7. Sigue mena
 
 ftlib:
 -isalpha V			-toupper V
