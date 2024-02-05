@@ -1,5 +1,8 @@
-1. Revisar SPLIT
-2. Sigue mena
+1. Revisar SPLIT, reducir y limpiar
+2. Seguir añadiendo el principio de la funcion en LIBFT.H
+3. Añadir #include <libft.h> a todos los archivos
+4. Sigue tocando el github
+5. Sigue mena
 
 ftlib:
 -isalpha V			-toupper V
@@ -13,7 +16,7 @@ ftlib:
 -memcpy	V			-atoi V 
 -memmove V			-calloc V
 -strlcpy V			-strdup V
--strlcat V			-strtrim
+-strlcat V			-strtrim V
 -substr	 V			-split X
 -strjoin V			-itoa
 -strmapi			-striteri
