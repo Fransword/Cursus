@@ -1,0 +1,28 @@
+1. Revisar rework de STRLCAT
+2. Revisar STRJOIN
+3. Sigue mena
+
+ftlib:
+-isalpha V			-toupper V
+-isdigit V			-tolower V
+-isalnum V			-strchr V
+-isascii V			-strrchr V
+-isprint V			-strncmp V
+-strlen	V			-memchr V
+-memset	V			-memcmp V
+-bzero	V			-strnstr V
+-memcpy	V			-atoi V 
+-memmove V			-calloc V
+-strlcpy V			-strdup V
+-strlcat X/V			-strtrim
+-substr	 V			-split
+-strjoin V			-itoa
+-strmapi			-striteri
+-putchar_fd			-putstr_fd
+-putendl_fd			-putnbr_fd
+			bonus:
+-lstnew				-lsadd_front
+-lstsize			-lstlast
+-lstadd_back		-lstdelone
+-lstclear			-lstiter
+-lstmap
