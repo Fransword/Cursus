@@ -1,6 +1,5 @@
-1. Revisar rework de STRLCAT
-2. Revisar STRJOIN
-3. Sigue mena
+1. Revisar SPLIT
+2. Sigue mena
 
 ftlib:
 -isalpha V			-toupper V
@@ -14,8 +13,8 @@ ftlib:
 -memcpy	V			-atoi V 
 -memmove V			-calloc V
 -strlcpy V			-strdup V
--strlcat X/V			-strtrim
--substr	 V			-split
+-strlcat V			-strtrim
+-substr	 V			-split X
 -strjoin V			-itoa
 -strmapi			-striteri
 -putchar_fd			-putstr_fd

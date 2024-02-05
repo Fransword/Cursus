@@ -6,16 +6,23 @@
 /*   By: francflo <francflo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:05:03 by francflo          #+#    #+#             */
-/*   Updated: 2024/02/05 14:14:59 by francflo         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:31:11 by francflo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	**ft_split(char *str, const char delim)
 {
-	char **resul = 0;
-	size_t count = 0;
-	char *tmp = str;
-	char kick = 0;
+	char	**resul;
+	size_t	count;
+	char	*tmp;
+	char	kick;
+	size_t	idx;
+	char	*token;
+
+	resul = 0;
+	count = 0;
+	tmp = str;
+	kick = 0;
 	delim[0] = delim;
 	delim[1] = 0;
 	while (*tmp)
@@ -31,8 +38,8 @@ char	**ft_split(char *str, const char delim)
 	resul = ft_malloc(sizeof(char *) * count);
 	if (resul)
 	{
-		size_t idx = 0;
-		char *token = strtok(a_str, delim);
+		idx = 0;
+		token = strtok(a_str, delim);
 		while (token)
 		{
 			assert(idx < count);
