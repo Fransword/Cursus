@@ -15,47 +15,59 @@
 
 #include <libft.h>
 
-static int	ft_digit_count(long int i)
+int	cont_dig(int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	if (i < 0)
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		i *= -1;
-		count++;
+		n = -n;
+		i++;
 	}
-	while (i > 0)
+	while (n > 0)
 	{
-		i /= 10;
-		count++;
+		n /= 10;
+		i++;
 	}
-	return (count);
+	return (i);
+}
+
+char	*aux_ft(int dig, int n, char *s)
+{
+	while (dig >= 0)
+	{
+		s[dig] = ((n % 10) + '0');
+		n /= 10;
+		if ((dig == 1) && (s[0] == '-'))
+			dig--;
+		dig--;
+	}
+	return (s);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*str;
-	int			i;
-	long int	nb;
+	char	*s;
+	int		dig;
 
-	nb = n;
-	i = ft_digit_count(nb);
-	str = malloc(i * sizeof(char) + 1);
-	if (!str)
-		return (0);
-	str[i--] = 0;
-	if (nb == 0)
-		str[0] = 48;
-	if (nb < 0)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	dig = cont_dig(n);
+	s = malloc(sizeof(char) * (dig + 1));
+	if (!s)
+		return (NULL);
+	s[dig] = '\0';
+	if (n < 0)
 	{
-		str[0] = '-';
-		nb = nb * -1;
+		s[0] = '-';
+		n *= -1;
 	}
-	while (nb > 0)
-	{
-		str[i--] = nb % 10 + '0';
-		nb = nb / 10;
-	}
-	return (str);
+	else
+		s[0] = '0';
+	dig--;
+	aux_ft(dig, n, s);
+	return (s);
 }

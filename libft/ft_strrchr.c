@@ -12,17 +12,25 @@
 
 #include <libft.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	const char	*last_occurrence = NULL;
+	char	*p;
+	char	*p2;
 
-	while (*s != '\0')
+	p = (char *)str;
+	p2 = p;
+	while (*p != '\0')
 	{
-		if (*s == c)
-		{
-			last_occurrence = s;
-		}
-		s++;
+		if (*p == (char)c)
+			p2 = p;
+		p++;
 	}
-	return ((char *)last_occurrence);
+	if ((char)c == '\0')
+	{
+		p2 = p;
+		return (p2);
+	}
+	if (*p2 == (char)c)
+		return (p2);
+	return (0);
 }

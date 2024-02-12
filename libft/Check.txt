@@ -1,4 +1,5 @@
 1. limpia en funcion de la foto del movil
+2. revisa el libft.h
 2. revisa el github de ramon
 3. Sigue mena
 
@@ -15,8 +16,8 @@ ftlib:
 -memmove V			-calloc V
 -strlcpy V			-strdup V
 -strlcat V			-strtrim V
--substr	 V			-split X
--strjoin V			-itoa X
+-substr	 V			-split V
+-strjoin V			-itoa V
 -strmapi V			-striteri V
 -putchar_fd	 V		-putstr_fd V
 -putendl_fd	 V		-putnbr_fd V
