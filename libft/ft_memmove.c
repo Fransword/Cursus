@@ -2,34 +2,40 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2023/12/13 11:30:23 by marvin            #+#    #+#             */
 /*   Updated: 2023/12/13 11:30:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*my_memmove(void *dest, const void *src, size_t n)
+#include <libft.h>
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (dest <= src || dest >= (char *) src + n)
+	const char	*s;
+	char		*d;
+
+	s = src;
+	d = dest;
+	if (dest <= src || d >= s + n)
 	{
 		while (n--)
 		{
-			*(char *) dest = *(char *) src;
-			dest = (char *) dest + 1;
-			src = (char *) src + 1;
+			*d++ = *s++;
 		}
 	}
 	else
 	{
-		dest = (char *)dest + n - 1;
-		src = (char *)src + n - 1;
+		d += n - 1;
+		s += n - 1;
 		while (n--)
 		{
-			*(char *) dest = *(char *) src;
-			dest = (char *) dest - 1;
-			src = (char *) src - 1;
+			*d-- = *s--;
 		}
 	}
 	return (dest);

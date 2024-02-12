@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	len_s1;
@@ -17,20 +19,20 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	len_resul;
 	char	*resul;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
+	len_s1 = ft_strlen(*s1);
+	len_s2 = ft_strlen(*s2);
 	len_resul = len_s1 + len_s2 + 1;
-	resul = (char *)ft_malloc(len_resul);
+	resul = (char *)malloc(len_resul);
 	if (resul == NULL)
 	{
-		write(stderr, "Error al asignar memoria.\n",
-			ft_strlen("Error de memoria\n"));
+		write(1, "Error\n", 1);
 		return (NULL);
 	}
-	ft_strlcpy(resul, s1);
-	ft_strlcat(resul, s2);
+	ft_strlcpy(resul, s1, len_s1 + 1);
+	ft_strlcat(resul, s2, len_resul);
 	return (resul);
 }
+
 /*int main() {
 	const char* cadena1 = "Hola, ";
 	const char* cadena2 = "mundo!";

@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_isdigit(int digit)
+#include <libft.h>
+
+int	ft_isdigit(int digit)
 {
 	if (digit >= '0' && digit <= '9')
-	{
-		write (1, &digit, 1);
-	}
+		return (1);
 	else
-	{
-		write(1, "no", 2);
-	}
+		return (0);
 }

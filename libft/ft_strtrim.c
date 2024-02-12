@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	front;
@@ -20,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 != 0 && set != 0)
 	{
 		front = 0;
-		rear = ft_strlen(s1);
+		rear = ft_strlen(*s1);
 		while (s1[front] && ft_strchr(set, s1[front]))
 			front++;
 		while (s1[rear - 1] && ft_strchr(set, s1[rear - 1]) && rear > front)

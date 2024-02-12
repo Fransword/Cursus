@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_isascii(int ascii)
+#include <libft.h>
+
+int	ft_isascii(int ascii)
 {
 	if (ascii >= 0 && ascii <= 127)
-	{
-		write (1, &ascii, 1);
-	}
+		return (1);
 	else
-	{
-		write(1, "no", 2);
-	}
+		return (0);
 }

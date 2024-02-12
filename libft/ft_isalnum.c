@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_isalnum(int num)
+#include <libft.h>
+
+int	ft_isalnum(int num)
 {
 	if (num >= '0' && num <= '9')
-	{
-		write (1, &num, 1);
-	}
+		return (1);
+	if ((num >= 'a' && num <= 'z') || (num >= 'A' && num <= 'Z'))
+		return (1);
 	else
-	{
-		write(1, "no", 1);
-	}
+		return (0);
 }

@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_isprint(int print)
+#include <libft.h>
+
+int	ft_isprint(int print)
 {
 	if (print >= 32 && print <= 126)
-	{
-		write (1, &print, 1);
-	}
+		return (1);
 	else
-	{
-		write(1, "no", 2);
-	}
+		return (0);
 }

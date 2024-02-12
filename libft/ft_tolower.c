@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	ft_tolower( char letra)
 {
 	while (letra >= 'A' && letra <= 'Z')

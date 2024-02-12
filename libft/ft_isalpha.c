@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_alpha(int alpha)
+#include <libft.h>
+
+int	ft_alpha(int alpha)
 {
-	if (alpha >= 'a' && alpha <= 'z' || alpha >= 'A' && alpha <= 'Z')
-	{
-		write (1, &alpha, 1);
-	}
+	if ((alpha >= 'a' && alpha <= 'z') || (alpha >= 'A' && alpha <= 'Z'))
+		return (1);
 	else
-	{
-		write(1, "no", 1);
-	}
+		return (0);
 }

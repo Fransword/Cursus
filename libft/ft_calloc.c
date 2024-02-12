@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*my_calloc(size_t num_items, size_t size_of_item)
+#include <libft.h>
+
+void	*ft_calloc(size_t num_items, size_t size_of_item)
 {
 	size_t	total_size;
 	void	*allocated_memory;
@@ -20,7 +22,7 @@ void	*my_calloc(size_t num_items, size_t size_of_item)
 	{
 		return (NULL);
 	}
-	*allocated_memory = malloc(total_size);
+	allocated_memory = malloc(total_size);
 	if (allocated_memory != NULL)
 	{
 		memset(allocated_memory, 0, total_size);

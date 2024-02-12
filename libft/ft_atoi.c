@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 int	ft_atoi(char *str)
 {
 	int	signo;
 	int	num;
 
 	num = 0;
-	signo = 1
-		while (*str == ' ' || (*str >= 9 && *str <= 10))
+	signo = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 10))
 		str++;
 	while (*str == '+' || *str == '-')
 	{
