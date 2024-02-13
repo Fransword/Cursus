@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	size_t	lon;
+	size_t	len;
 	char	*cop;
 
-	lon = ft_strlen(s) + 1;
-	cop = (char *)malloc(lon);
+	len = ft_strlen(s) + 1;
+	cop = (char *)malloc(len);
 	if (cop != NULL)
-		ft_strlcpy(cop, s, lon);
+		ft_strlcpy(cop, s, len);
 	return (cop);
 }
