@@ -12,20 +12,14 @@
 
 #include <libft.h>
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	size_t	longitud;
 	char	*copia;
 
-	if (s == NULL)
-	{
-		return (NULL);
-	}
-	longitud = strlen(s) + 1;
+	longitud = ft_strlen(s) + 1;
 	copia = (char *)malloc(longitud);
 	if (copia != NULL)
-	{
-		strcpy(copia, s);
-	}
+		ft_strlcpy(copia, s, longitud);
 	return (copia);
 }

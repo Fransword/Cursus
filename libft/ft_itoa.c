@@ -15,7 +15,7 @@
 
 #include <libft.h>
 
-int	cont_dig(int n)
+int	cont_dig(long n)
 {
 	int	i;
 
@@ -35,7 +35,7 @@ int	cont_dig(int n)
 	return (i);
 }
 
-char	*aux_ft(int dig, int n, char *s)
+char	*aux_ft(int dig, long n, char *s)
 {
 	while (dig >= 0)
 	{
@@ -52,22 +52,22 @@ char	*ft_itoa(int n)
 {
 	char	*s;
 	int		dig;
+	long	num;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	dig = cont_dig(n);
+	num = n;
+	dig = cont_dig(num);
 	s = malloc(sizeof(char) * (dig + 1));
 	if (!s)
 		return (NULL);
 	s[dig] = '\0';
-	if (n < 0)
+	if (num < 0)
 	{
 		s[0] = '-';
-		n *= -1;
+		num *= -1;
 	}
 	else
 		s[0] = '0';
 	dig--;
-	aux_ft(dig, n, s);
+	aux_ft(dig, num, s);
 	return (s);
 }

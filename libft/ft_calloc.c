@@ -25,7 +25,7 @@ void	*ft_calloc(size_t num_items, size_t size_of_item)
 	allocated_memory = malloc(total_size);
 	if (allocated_memory != NULL)
 	{
-		memset(allocated_memory, 0, total_size);
+		ft_memset(allocated_memory, 0, total_size);
 	}
 	return (allocated_memory);
 }
