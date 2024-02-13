@@ -14,12 +14,12 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t	longitud;
-	char	*copia;
+	size_t	lon;
+	char	*cop;
 
-	longitud = ft_strlen(s) + 1;
-	copia = (char *)malloc(longitud);
-	if (copia != NULL)
-		ft_strlcpy(copia, s, longitud);
-	return (copia);
+	lon = ft_strlen(s) + 1;
+	cop = (char *)malloc(lon);
+	if (cop != NULL)
+		ft_strlcpy(cop, s, lon);
+	return (cop);
 }
