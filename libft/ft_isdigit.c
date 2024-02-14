@@ -19,3 +19,4 @@ int	ft_isdigit(int digit)
 	else
 		return (0);
 }
+/*si es un digito*/

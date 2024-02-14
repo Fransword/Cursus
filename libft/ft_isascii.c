@@ -19,3 +19,4 @@ int	ft_isascii(int ascii)
 	else
 		return (0);
 }
+/*si es un caracter ascii*/

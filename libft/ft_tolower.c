@@ -12,11 +12,9 @@
 
 #include "libft.h"
 
-int	ft_tolower(int letra)
+int	ft_tolower(int let)
 {
-	while (letra >= 65 && letra <= 90)
-	{
-		letra = letra - (65 - 97);
-	}
-	return (letra);
+	while (let >= 65 && let <= 90)
+		let = let - (65 - 97);
+	return (let);
 }

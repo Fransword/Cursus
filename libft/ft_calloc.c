@@ -19,13 +19,10 @@ void	*ft_calloc(size_t num_items, size_t size_of_item)
 
 	total_size = num_items * size_of_item;
 	if (num_items != 0 && total_size / num_items != size_of_item)
-	{
 		return (NULL);
-	}
 	allocated_memory = malloc(total_size);
 	if (allocated_memory != NULL)
-	{
 		ft_memset(allocated_memory, 0, total_size);
-	}
 	return (allocated_memory);
 }
+//sirver para devolver un puntero al espacio asignado

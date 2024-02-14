@@ -19,3 +19,4 @@ int	ft_isprint(int print)
 	else
 		return (0);
 }
+/*si es un caracter printable*/

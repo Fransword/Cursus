@@ -71,3 +71,5 @@ char	*ft_itoa(int n)
 	aux_ft(dig, num, s);
 	return (s);
 }
+/*sirve para reprensentar
+un string a un entero*/

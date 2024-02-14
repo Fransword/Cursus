@@ -19,3 +19,4 @@ int	ft_isalpha(int alpha)
 	else
 		return (0);
 }
+/*para ver si es una letra*/

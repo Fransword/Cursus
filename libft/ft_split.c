@@ -41,7 +41,7 @@ static char	**ft_memory(char const *s, char c)
 	return (result);
 }
 
-static int	ft_gonza(char const *s, char c, int *k, char **result)
+static int	ft_cris(char const *s, char c, int *k, char **result)
 {
 	int			j;
 	char		*tmp;
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		else
 		{
-			g = ft_gonza(s + i, c, &k, result);
+			g = ft_cris(s + i, c, &k, result);
 			if (g == -1)
 				return (NULL);
 			i = i + g;

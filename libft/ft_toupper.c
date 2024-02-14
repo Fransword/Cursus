@@ -12,11 +12,9 @@
 
 #include "libft.h"
 
-int	ft_toupper(int letra)
+int	ft_toupper(int let)
 {
-	while (letra >= 97 && letra <= 122)
-	{
-		letra = letra - (97 - 65);
-	}
-	return (letra);
+	while (let >= 97 && let <= 122)
+		let = let - (97 - 65);
+	return (let);
 }

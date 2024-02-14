@@ -18,7 +18,10 @@ void	ft_bzero(void *s, size_t n)
 
 	z = s;
 	while (n-- > 0)
-	{
 		*z++ = 0;
-	}
 }
+/*sirve para poner a cero
+los primeros n
+bytes del área
+de bytes que comienza en s.
+*/

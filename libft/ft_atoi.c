@@ -36,3 +36,4 @@ int	ft_atoi(const char *str)
 	}
 	return (nb * s);
 }
+//ignora los caracteres de espacio en blanco

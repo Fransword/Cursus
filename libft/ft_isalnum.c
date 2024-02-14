@@ -21,3 +21,5 @@ int	ft_isalnum(int num)
 	else
 		return (0);
 }
+/*para ver si es un numero o
+una letra*/

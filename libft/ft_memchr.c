@@ -25,3 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+rastrea los primeros n bytes
+del área de memoria apuntada por s
+*/
