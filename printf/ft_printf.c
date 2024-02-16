@@ -67,6 +67,24 @@ int ft_found_x(size_t x, int i)
     return (i);
 }
 
+int ft_found_bx(size_t bx, int i)
+{
+    if (bx == 0)
+        i = ft_printf_write('0', i);
+    else if (bx >= 16)
+    {
+        i = ft_found_bx(bx / 16, i);
+        i = ft_found_bx(bx % 16, i);
+    }
+    else
+    {
+        if (bx <= 9)
+            i = ft_printf_write(bx + '0', i);
+        else
+            i = ft_printf_write(bx + 'A' - 10, i);
+    }
+    return (i);
+}
 
 int ft_next_percent(const char *format, va_list args, int i, int j)
 {
@@ -75,7 +93,9 @@ int ft_next_percent(const char *format, va_list args, int i, int j)
     if (format[j] == 'd')
         i = ft_found_d(va_arg(args, int), i);
     if (format[j] == 'x')
-        i = ft_found_x(va_arg(args, unsigned int), i);
+        i = ft_found_x(va_arg(args, size_t), i);
+    if (format[j] == 'X')
+        i = ft_found_bx(va_arg(args, size_t), i);
     return (i);
 }
 
@@ -107,9 +127,9 @@ int main(void)
 {
     int i;
 
-    i = ft_printf("mi_printf\ns: %s, d: %d, x: %x\n", "mapache fumón", 42, 42);
+    i = ft_printf("mi_printf\ns: %s, d: %d, x: %x, X: %X,\n", "mapache fumón", 42, 42, 42);
     printf("i: %i\n", i);
-    //i = printf("real --> hello 42!\ns: %s, d: %d, x: %x\n", NULL, 42, 42);
-    //printf("i: %i\n\n", i);
+    //i = printf("real_printf\ns: %s, d: %d, x: %x\n", NULL, 42, 42);
+    //printf("i: %i\n", i);
     return (0);
 }
