@@ -1,162 +1,74 @@
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: francflo <francflo@student.42.fr>          +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
+/*   Created: 2024/02/19 12:19:16 by francflo          #+#    #+#             */
+/*   Updated: 2024/02/19 12:19:16 by francflo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_printf_write(int c, int i)
-{
-    i++;
-    write(1, &c, 1);
-    return (i);
-}
+#include "printf.h"
 
-int ft_found_d(int d, int i)
+int	ft_next_percent(const char *format, va_list args, int i, int j)
 {
-    if (d == -2147483648)
-    {
-        write (1, "-2147483648", 11);
-        i = i + 11;
-    }
-    else if (d < 0)
-    {
-        i = ft_printf_write('-', i);
-        i = ft_found_d(-d, i);
-    }
-    else if (d >= 0 && d < 10)
-        i = ft_printf_write(d + '0', i);
-    else
-    {
-        i = ft_found_d(d / 10, i);
-        i = ft_printf_write(d % 10 + '0', i);
-    }
-    return (i);
-}
-
-int ft_found_s(char *s, int i)
-{
-    if (!s)
-        i = ft_found_s("(null)", i);
-    else
-    {
-        while (*s)
-        {
-            write(1, &(*s), 1);
-            i++;
-            s++;
-        }
-    }
-    return (i);
-}
-
-int ft_found_x(size_t x, int i)
-{
-    if (x == 0)
-        i = ft_printf_write('0', i);
-    else if (x >= 16)
-    {
-        i = ft_found_x(x / 16, i);
-        i = ft_found_x(x % 16, i);
-    }
-    else
-    {
-        if (x <= 9)
-            i = ft_printf_write(x + '0', i);
-        else
-            i = ft_printf_write(x + 'a' - 10, i);
-    }
-    return (i);
-}
-
-int ft_found_bx(size_t bx, int i)
-{
-    if (bx == 0)
-        i = ft_printf_write('0', i);
-    else if (bx >= 16)
-    {
-        i = ft_found_bx(bx / 16, i);
-        i = ft_found_bx(bx % 16, i);
-    }
-    else
-    {
-        if (bx <= 9)
-            i = ft_printf_write(bx + '0', i);
-        else
-            i = ft_printf_write(bx + 'A' - 10, i);
-    }
-    return (i);
-}
-
-int ft_found_u(unsigned int u, int i)
-{
-    if (u >= 10)
-        return (-1);
-    else if (u < 10)
-        i = ft_printf_write(u + '0', i);
-    else if (u >= 10)
-    {
-        i = ft_found_u(u / 10, i);
-        i = ft_found_u(u % 10 + '0', i);
-    }
-    return (i);
-}
-
-int	ft_found_c(int c, int i)
-{
-	i++;
-	write(1, &c, 1);
+	if (format[j] == 'c')
+		i = ft_found_c(va_arg(args, int), i);
+	if (format[j] == 's')
+		i = ft_found_s(va_arg(args, char *), i);
+	if (format[j] == 'd')
+		i = ft_found_d(va_arg(args, int), i);
+	if (format[j] == 'i')
+		i = ft_found_d(va_arg(args, int), i);
+	if (format[j] == 'p')
+		i = ft_found_p(va_arg(args, size_t), i);
+	if (format[j] == 'x')
+		i = ft_found_x(va_arg(args, size_t), i);
+	if (format[j] == 'X')
+		i = ft_found_bx(va_arg(args, size_t), i);
+	if (format[j] == 'u')
+		i = ft_found_u(va_arg(args, unsigned int), i);
+	if (format[j] == '%')
+		i = ft_found_c('%', i);
 	return (i);
 }
 
-int ft_next_percent(const char *format, va_list args, int i, int j)
-{ 
-    if (format[j] == 'c')
-        i = ft_found_c(va_arg(args, int), i);
-    if (format[j] == 's')
-        i = ft_found_s(va_arg(args, char *), i);
-    if (format[j] == 'd')
-        i = ft_found_d(va_arg(args, int), i);
-    if (format[j] == 'x')
-        i = ft_found_x(va_arg(args, size_t), i);
-    if (format[j] == 'X')
-        i = ft_found_bx(va_arg(args, size_t), i);
-    if (format[j] == 'u')
-        i = ft_found_u(va_arg(args, unsigned int), i);
-    if (format[j] == '%')
-		i = ft_found_c('%', i);
-    return (i);
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	va_start(args, format);
+	while (format[j])
+	{
+		if (format[j] == '%')
+			i = ft_next_percent(format, args, i, ++j);
+		else
+		{
+			i++;
+			write(1, &format[j], 1);
+		}
+		j++;
+	}
+	va_end(args);
+	return (i);
 }
 
-int ft_printf(const char *format, ... )
+int	main(void)
 {
-    va_list args;
-    int     i;
-    int     j;
+	int	i;
 
-    i = 0;
-    j = 0;
-    va_start(args, format);
-    while (format[j])
-    {
-        if (format[j] == '%')
-            i = ft_next_percent(format, args, i, ++j);
-        else
-        {
-            i++;
-            write(1, &format[j], 1);
-        }
-        j++;
-    }
-    va_end(args);
-    return (i);
-}
-
-int main(void)
-{
-    int i;
-
-    i = ft_printf("mi_printf\ns: %s, d: %d, x: %x, X: %X, u: %u, porcentaje: %%\n", "mapache fumón", 42, 42, 42, 9, '%');
-    printf("i: %i\n", i);
-    //i = printf("real_printf\ns: %s, d: %d, x: %x\n", NULL, 42, 42);
-    //printf("i: %i\n", i);
-    return (0);
+	i = ft_printf("mi_printf\ns: %s, d: %d, i: %i, x: %x, X: %X, u: %u, p: %p, porcentaje: %%\n", "mapache fumón", 42, 42, 42, 42, 4, "a", '%');
+	printf("i: %i\n", i);
+	// i = printf("real_printf\ns: %s, d: %d, x: %x\n", NULL, 42, 42);
+	// printf("i: %i\n", i);
+	return (0);
 }
