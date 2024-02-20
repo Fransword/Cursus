@@ -18,19 +18,3 @@ int	ft_found_c(int c, int i)
 	write(1, &c, 1);
 	return (i);
 }
-
-int	ft_found_s(char *s, int i)
-{
-	if (!s)
-		i = ft_found_s("(null)", i);
-	else
-	{
-		while (*s)
-		{
-			write(1, &(*s), 1);
-			i++;
-			s++;
-		}
-	}
-	return (i);
-}
