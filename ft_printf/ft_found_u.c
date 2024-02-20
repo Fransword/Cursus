@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_found_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: francflo <francflo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:06:03 by francflo          #+#    #+#             */
-/*   Updated: 2024/02/20 12:21:30 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/20 16:00:33 by francflo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_found_u(unsigned int u, int i)
 {

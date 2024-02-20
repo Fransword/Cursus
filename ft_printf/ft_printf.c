@@ -13,7 +13,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_next_percent(const char *format, va_list args, int i, int j)
 {
@@ -40,10 +40,10 @@ int	ft_next_percent(const char *format, va_list args, int i, int j)
 
 int	ft_printf(const char *format, ...)
 {
+	va_list	args;
 	int	i;
 	int	j;
-	va_list	args;
-	
+
 	i = 0;
 	j = 0;
 	va_start(args, format);
@@ -61,15 +61,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (i);
 }
-
-/*int	main(void)
-{
-	int	i;
-
-
-	i = ft_printf("mi_printf\ns: %s, d: %d, i: %i, x: %x, X: %X, u: %u, p: %p, porcentaje: %%\n", "mapache fumon", 69, 42, 13, 33, 3, "a", '%');
-	printf("i: %i\n", i);
-	// i = printf("real_printf\ns: %s, d: %d, x: %x\n", NULL, 42, 42);
-	// printf("i: %i\n", i);
-	return (0);
-}*/

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francflo <francflo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <stdio.h>
@@ -22,7 +22,6 @@ int	ft_printf_write(int c, int i);
 int	ft_found_c(int c, int i);
 int	ft_found_s(char *s, int i);
 int	ft_found_d(int d, int i);
-int	ft_found_i(int y, int i);
 int	ft_found_bx(size_t bx, int i);
 int	ft_found_x(size_t x, int i);
 int	ft_found_u(unsigned int u, int i);

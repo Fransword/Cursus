@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_found_p(size_t p, int i)
 {
@@ -18,7 +18,7 @@ int	ft_found_p(size_t p, int i)
 	{
 		i = ft_found_c('0', i);
 		i = ft_found_c('x', i);
-		i = ft_found_bx(p, i);
+		i = ft_found_x(p, i);
 	}
 	else
 		i = ft_found_s("(null)", i);

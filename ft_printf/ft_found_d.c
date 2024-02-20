@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_found_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francflo <francflo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francflo <francflo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:30:49 by francflo          #+#    #+#             */
-/*   Updated: 2024/02/19 15:23:10 by francflo         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:00:37 by francflo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_found_d(int d, int i)
 {
