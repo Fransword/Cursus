@@ -2,14 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: francflo <francflo@student.42.fr>          +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
-/*   Created: 2024/02/19 12:19:16 by francflo          #+#    #+#             */
-/*   Updated: 2024/02/19 12:19:16 by francflo         ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: francflo <francflo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/21 13:03:06 by francflo          #+#    #+#             */
+/*   Updated: 2024/02/21 13:03:06 by francflo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +37,9 @@ int	ft_next_percent(const char *format, va_list args, int i, int j)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
 	int	i;
 	int	j;
+	va_list	args;
 
 	i = 0;
 	j = 0;
