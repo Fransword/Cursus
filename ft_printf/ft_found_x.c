@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-int	ft_found_x(size_t x, int i)
+int	ft_found_x(long int x, int i)
 {
 	if (x == 0)
 		i = ft_printf_write('0', i);
-	else if (x >= 16)
+	else if (x > 15)
 	{
 		i = ft_found_x(x / 16, i);
 		i = ft_found_x(x % 16, i);

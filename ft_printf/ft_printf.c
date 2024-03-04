@@ -25,9 +25,9 @@ int	ft_next_percent(const char *format, va_list args, int i, int j)
 	if (format[j] == 'p')
 		i = ft_found_p(va_arg(args, size_t), i);
 	if (format[j] == 'x')
-		i = ft_found_x(va_arg(args, size_t), i);
+		i = ft_found_x(va_arg(args, long int), i);
 	if (format[j] == 'X')
-		i = ft_found_bx(va_arg(args, size_t), i);
+		i = ft_found_bx(va_arg(args, long int), i);
 	if (format[j] == 'u')
 		i = ft_found_u(va_arg(args, unsigned int), i);
 	if (format[j] == '%')

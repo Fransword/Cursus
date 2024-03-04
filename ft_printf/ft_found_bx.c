@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_found_bx(size_t bx, int i)
+int	ft_found_bx(long int bx, int i)
 {
 	if (bx == 0)
 		i = ft_printf_write('0', i);
